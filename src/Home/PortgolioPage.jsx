@@ -2,6 +2,8 @@ import React, { useRef } from 'react';
 import { Link, Element } from 'react-scroll';
 import emailjs from 'emailjs-com';
 import img1 from '../assets/dp.jpg';
+import { Typewriter } from 'react-simple-typewriter';
+import { motion } from 'framer-motion';
 
 const projects = [
   {
@@ -24,7 +26,6 @@ const projects = [
 
 const PortfolioPage = () => {
   const form = useRef();
-
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -53,30 +54,75 @@ const PortfolioPage = () => {
           <Link to="projects" smooth duration={600} className="cursor-pointer hover:underline">Projects</Link>
           <Link to="contact" smooth duration={600} className="cursor-pointer hover:underline">Contact</Link>
         </div>
-        <a href="#" className="hover:underline">Book A Call ↗</a>
+        <a href="#" className="hover:underline">Resume ↗</a>
       </nav>
 
       {/* Hero */}
       <Element name="hero">
-        <section className="min-h-screen flex flex-col md:flex-row items-center justify-between px-6 md:px-16 py-28 pt-32">
-          <div className="md:w-1/2 space-y-6">
-            <h1 className="text-6xl md:text-8xl font-bold leading-tight">Hello</h1>
-            <p className="text-xl text-gray-600">— I’m Touhidul Islam, a future-focused creative developer</p>
-            
-          </div>
-          <div className="md:w-1/2 mt-10 md:mt-0">
-            <img src={img1} alt="Touhidul Islam Portrait" className="w-full h-auto object-cover rounded-xl shadow-lg" />
-          </div>
+        <section className="md:min-h-screen flex flex-col-reverse md:flex-row items-center justify-center px-6 md:px-16 py-24 md:py-32 gap-12 bg-white">
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            className="md:w-1/2 text-center md:text-left space-y-6"
+          >
+            <h1 className="text-3xl md:text-4xl font-bold leading-tight text-gray-900">
+              I’m{' '}
+              <span className="text-teal-600">
+                <Typewriter
+                  words={[
+  'a CSE student',
+  'a web developer',
+  'a database designer',
+  'a UI/UX enthusiast',
+  'a problem solver',
+  'a tech explorer',
+  'a lifelong learner',
+
+]}
+
+                  loop={0}
+                  cursor
+                  cursorStyle="_"
+                  typeSpeed={70}
+                  deleteSpeed={50}
+                  delaySpeed={1500}
+                />
+              </span>
+            </h1>
+            <p className="text-lg md:text-xl text-gray-600">
+              — I’m Touhidul Islam, a future-focused creative developer.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="md:w-1/2 flex justify-center"
+          >
+            <img
+              src={img1}
+              alt="Touhidul Islam Portrait"
+              className="w-72 md:w-96 h-auto object-cover rounded-2xl shadow-lg"
+            />
+          </motion.div>
         </section>
       </Element>
 
-      {/* About Me */}
+      {/* About Section */}
       <Element name="about">
-        <section className="bg-gray-50 py-24 px-6 md:px-16">
+        <motion.section
+          className="bg-gray-50 py-24 px-6 md:px-16"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
           <div className="grid md:grid-cols-3 gap-12 items-center">
             <div>
               <h2 className="text-4xl font-semibold mb-4">About Me</h2>
-              <p className="text-gray-700 text-lg leading-relaxed">
+              <p className="text-gray-700 text-lg leading-relaxed text-justify">
                 I'm Touhidul Islam, a 3rd-year CSE student at UIU in Dhaka. I merge design and tech to build intuitive, elegant digital experiences.
               </p>
             </div>
@@ -86,41 +132,67 @@ const PortfolioPage = () => {
               <img src={img1} alt="Touhidul Smiling" className="rounded-lg object-cover" />
             </div>
             <div className="space-y-6">
-              <div className="flex items-start gap-3">
-                <div className="text-xl text-black">✦</div>
-                <p className="text-gray-700 text-lg">
-                  Strong foundation in design/code, solving real-world problems through clean UX/UI and functionality.
-                </p>
-              </div>
-              <div className="flex items-start gap-3">
-                <div className="text-xl text-black">✦</div>
-                <p className="text-gray-700 text-lg">
-                  Believer in collaboration, curiosity, and iteration to build great products.
-                </p>
-              </div>
-            </div>
+  <div className="flex items-start gap-3">
+    <div className="text-xl text-black">✦</div>
+    <p className="text-gray-700 text-md text-justify">
+      Strong foundation in design/code, solving real-world problems through clean UX/UI and functionality.
+    </p>
+  </div>
+  <div className="flex items-start gap-3">
+    <div className="text-xl text-black">✦</div>
+    <p className="text-gray-700 text-md text-justify">
+      Believer in collaboration, curiosity, and iteration to build great products.
+    </p>
+  </div>
+  <div className="flex items-start gap-3">
+    <div className="text-xl text-black">✦</div>
+    <p className="text-gray-700 text-md text-justify">
+      Experienced in designing efficient, scalable databases and crafting well-structured data models for web applications.
+    </p>
+  </div>
+</div>
+
           </div>
-        </section>
+        </motion.section>
       </Element>
 
-      {/* Projects */}
+      {/* Projects Section */}
       <Element name="projects">
-        <section className="py-24 px-6 md:px-16 bg-white">
-          <h2 className="text-4xl font-semibold mb-8">Projects</h2>
+        <motion.section
+          className="py-24 px-6 md:px-16 bg-white"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <h2 className="text-4xl font-semibold mb-8">Recent Projects</h2>
           <div className="grid md:grid-cols-2 gap-10">
             {projects.map((project, index) => (
-              <div key={index} className="p-6 bg-gray-100 rounded-xl shadow">
+              <motion.div
+                key={index}
+                className="p-6 bg-gray-100 rounded-xl shadow"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
+                viewport={{ once: true }}
+              >
                 <h3 className="text-2xl font-semibold mb-2">{project.title}</h3>
                 <p className="text-gray-700">{project.description}</p>
-              </div>
+              </motion.div>
             ))}
           </div>
-        </section>
+        </motion.section>
       </Element>
 
-      {/* Contact Me */}
+      {/* Contact Section */}
       <Element name="contact">
-        <section className="bg-gray-50 py-24 px-6 md:px-16">
+        <motion.section
+          className="bg-gray-50 py-24 px-6 md:px-16"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
           <h2 className="text-4xl font-semibold mb-12 text-center">Contact Me</h2>
           <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-start bg-white p-8 rounded-xl shadow-xl">
             {/* Contact Info */}
@@ -129,10 +201,10 @@ const PortfolioPage = () => {
                 <h3 className="text-2xl font-semibold text-black mb-2">Let's Talk</h3>
                 <p>Feel free to reach out for collaboration, questions, or just a friendly hello.</p>
               </div>
-              <div>
-                <p><strong>📍 Address:</strong> Dhaka, Bangladesh</p>
-                <p><strong>📧 Email:</strong> touhiduldev@gmail.com</p>
-                <p><strong>📞 Phone:</strong> +880123456789</p>
+              <div className=''>
+                <p><strong>Address:</strong> Dhaka, Bangladesh</p>
+                <p><strong>Email:</strong> touhidul.dev5@gmail.com</p>
+                <p><strong>Phone:</strong> +8801315486822</p>
               </div>
             </div>
 
@@ -167,7 +239,7 @@ const PortfolioPage = () => {
               </button>
             </form>
           </div>
-        </section>
+        </motion.section>
       </Element>
     </div>
   );
