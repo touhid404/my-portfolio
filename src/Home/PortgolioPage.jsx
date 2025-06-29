@@ -5,23 +5,31 @@ import img1 from '../assets/dp.jpg';
 import { Typewriter } from 'react-simple-typewriter';
 import { motion } from 'framer-motion';
 
+// Import your project images
+import project1Img from '../assets/p1.jpg';
+import project2Img from '../assets/p2.jpg';
+import project3Img from '../assets/p3.jpg';
+import project4Img from '../assets/p1.jpg';
+
 const projects = [
   {
-    title: 'Fintech UX Redesign',
-    description: 'Redesigned a mobile banking app for better usability and accessibility.',
+    title: 'Roommate Finder App',
+    description: 'Developed a full-stack web app to connect students with available rooms in Dhaka.',
+    image: project1Img,
+    link: 'https://roommate-finder-app-4f81c.web.app/',
   },
   {
-    title: 'SaaS Analytics Dashboard',
-    description: 'Designed an intuitive dashboard with deep data visualization tools.',
+    title: 'Event Explorer Platform',
+    description: 'Designed a  dashboard for event organizers to manage and promote events.',
+    image: project2Img,
+    link: 'https://events-explorer.netlify.app/',
   },
   {
-    title: 'Healthcare Mobile App',
-    description: 'Crafted a telehealth app focused on elderly-friendly UI and flows.',
-  },
-  {
-    title: 'Startup Branding Kit',
-    description: 'Built a consistent visual language from logo to pitch decks.',
-  },
+    title: 'Edu Sphere - Social knowledge sharing platform',
+    description: 'Created a social platform for students to share knowledge and resources.',
+    image: project3Img,
+    link: 'https://edusphere-aedc1.web.app/',
+  }
 ];
 
 const PortfolioPage = () => {
@@ -71,16 +79,14 @@ const PortfolioPage = () => {
               <span className="text-teal-600">
                 <Typewriter
                   words={[
-  'a CSE student',
-  'a web developer',
-  'a database designer',
-  'a UI/UX enthusiast',
-  'a problem solver',
-  'a tech explorer',
-  'a lifelong learner',
-
-]}
-
+                    'a CSE student',
+                    'a web developer',
+                    'a database designer',
+                    'a UI/UX enthusiast',
+                    'a problem solver',
+                    'a tech explorer',
+                    'a lifelong learner',
+                  ]}
                   loop={0}
                   cursor
                   cursorStyle="_"
@@ -132,26 +138,25 @@ const PortfolioPage = () => {
               <img src={img1} alt="Touhidul Smiling" className="rounded-lg object-cover" />
             </div>
             <div className="space-y-6">
-  <div className="flex items-start gap-3">
-    <div className="text-xl text-black">✦</div>
-    <p className="text-gray-700 text-md text-justify">
-      Strong foundation in design/code, solving real-world problems through clean UX/UI and functionality.
-    </p>
-  </div>
-  <div className="flex items-start gap-3">
-    <div className="text-xl text-black">✦</div>
-    <p className="text-gray-700 text-md text-justify">
-      Believer in collaboration, curiosity, and iteration to build great products.
-    </p>
-  </div>
-  <div className="flex items-start gap-3">
-    <div className="text-xl text-black">✦</div>
-    <p className="text-gray-700 text-md text-justify">
-      Experienced in designing efficient, scalable databases and crafting well-structured data models for web applications.
-    </p>
-  </div>
-</div>
-
+              <div className="flex items-start gap-3">
+                <div className="text-xl text-black">✦</div>
+                <p className="text-gray-700 text-md text-justify">
+                  Strong foundation in design/code, solving real-world problems through clean UX/UI and functionality.
+                </p>
+              </div>
+              <div className="flex items-start gap-3">
+                <div className="text-xl text-black">✦</div>
+                <p className="text-gray-700 text-md text-justify">
+                  Believer in collaboration, curiosity, and iteration to build great products.
+                </p>
+              </div>
+              <div className="flex items-start gap-3">
+                <div className="text-xl text-black">✦</div>
+                <p className="text-gray-700 text-md text-justify">
+                  Experienced in designing efficient, scalable databases and crafting well-structured data models for web applications.
+                </p>
+              </div>
+            </div>
           </div>
         </motion.section>
       </Element>
@@ -170,14 +175,23 @@ const PortfolioPage = () => {
             {projects.map((project, index) => (
               <motion.div
                 key={index}
-                className="p-6 bg-gray-100 rounded-xl shadow"
+                className="p-6 bg-gray-100 rounded-xl shadow space-y-4"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
                 viewport={{ once: true }}
               >
-                <h3 className="text-2xl font-semibold mb-2">{project.title}</h3>
+                <img src={project.image} alt={project.title} className="rounded-md w-full h-48 object-cover" />
+                <h3 className="text-2xl font-semibold">{project.title}</h3>
                 <p className="text-gray-700">{project.description}</p>
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-teal-600 hover:underline"
+                >
+                  View Project ↗
+                </a>
               </motion.div>
             ))}
           </div>
@@ -195,20 +209,17 @@ const PortfolioPage = () => {
         >
           <h2 className="text-4xl font-semibold mb-12 text-center">Contact Me</h2>
           <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-start bg-white p-8 rounded-xl shadow-xl">
-            {/* Contact Info */}
             <div className="space-y-6 text-lg text-gray-700">
               <div>
                 <h3 className="text-2xl font-semibold text-black mb-2">Let's Talk</h3>
                 <p>Feel free to reach out for collaboration, questions, or just a friendly hello.</p>
               </div>
-              <div className=''>
+              <div>
                 <p><strong>Address:</strong> Dhaka, Bangladesh</p>
                 <p><strong>Email:</strong> touhidul.dev5@gmail.com</p>
                 <p><strong>Phone:</strong> +8801315486822</p>
               </div>
             </div>
-
-            {/* Contact Form */}
             <form ref={form} onSubmit={sendEmail} className="space-y-4">
               <input
                 type="text"
