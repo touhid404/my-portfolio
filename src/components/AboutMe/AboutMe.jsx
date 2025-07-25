@@ -13,19 +13,19 @@ const AboutMe = () => {
     >
       <div className=" mx-auto">
         {/* Heading */}
-        <h1 className="text-center  text-2xl font-bold text-gray-900 mb-4">
-          About Myself
+        <h1 className="text-center  text-2xl font-semibold  text-black/40 mb-10">
+         [ About Myself ]
         </h1>
 
         {/* Sub heading */}
-        <p className="text-center text-xl text-gray-700 max-w-5xl mx-auto mb-12">
+        <p className=" text-justify md:text-center text-xl text-gray-700 max-w-5xl mx-auto mb-12">
           Hi, I’m <span className="font-bold">Touhidul Islam</span> — someone who believes that great design is part creativity, part empathy, and part coffee-fueled hustle.
         </p>
 
         {/* Content */}
         <div className="grid md:grid-cols-3 gap-10 items-center">
           {/* Left Block */}
-          <div className="space-y-6">
+          <div className="space-y-6 flex flex-col items-center md:items-start">
             <div>
               <h3 className="text-lg font-semibold text-black mb-2">
                 Transforming Ideas into Digital Experiences
@@ -34,7 +34,7 @@ const AboutMe = () => {
                 You bring the vision, I bring the process – together we build a website that works.
               </p>
             </div>
-            <button className="bg-black text-white px-6 py-2 rounded-md hover:bg-gray-800">
+            <button className="bg-black/40  text-white px-6 py-2 rounded-xl hover:bg-gray-800">
               Start Your Project
             </button>
           </div>
@@ -59,7 +59,7 @@ const AboutMe = () => {
             <p>
               Outside of coding, I often recharge by exploring design trends, watching tech content, or playing games.
             </p>
-            <a href="#more" className="text-blue-600 font-semibold hover:underline">
+            <a href="#more" className="text-black/40 font-semibold hover:underline">
               Read More →
             </a>
           </div>

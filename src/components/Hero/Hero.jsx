@@ -17,7 +17,7 @@ const Hero = () => {
 
         <h1 className="text-2xl md:text-3xl font-semibold text-gray-900">
           <span className="mr-2">I'm a</span>
-          <span className="text-blue-600">
+          <span className="text-blue-600/40">
             <Typewriter
               words={['Frontend Developer', 'React Developer', 'UI/UX Enthusiast', 'JavaScript Lover']}
               loop={0} // 0 = infinite
@@ -34,8 +34,8 @@ const Hero = () => {
           I love turning complex ideas into clean, user-friendly designs that people actually enjoy using.
         </p>
 
-        <div className="flex justify-center md:justify-start md:gap-4">
-          <button className="bg-black text-white px-6 py-2 rounded-xl hover:bg-gray-800">
+        <div className="flex justify-center gap-2 md:justify-start md:gap-4">
+          <button className="bg-black/50 text-white px-6 py-2 rounded-xl hover:bg-gray-800">
             Download CV
           </button>
           <button className="bg-gray-300 px-6 py-2 rounded-xl hover:bg-gray-200">
@@ -54,7 +54,7 @@ const Hero = () => {
         <img
           src={img1}
           alt="Touhidul Islam"
-          className="w-[500px] h-[300px] rounded-2xl shadow-lg object-cover saturate-0 hover:saturate-100 transition duration-300"
+          className="w-[500px] h-[300px] md:rounded-2xl shadow-lg object-cover saturate-0 hover:saturate-100 transition duration-300"
         />
       </motion.div>
     </section>
