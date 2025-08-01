@@ -1,38 +1,53 @@
-import React from 'react';
-import DeveloperText from '../components/DevoloperText/DevoloperText';
-import Hero from '../components/Hero/Hero';
-import MyJourney from '../components/MyJourney/MyJourney';
-import AboutMe from '../components/AboutMe/AboutMe';
-import NavBar from '../components/Nav/NavBar';
-import { Element } from 'react-scroll';
-import Skills from '../components/Skills/Skills';
+import React from "react";
+import Hero from "../components/Hero/Hero";
+import NavBar from "../components/Nav/NavBar";
+import MyJourney from "../components/MyJourney/MyJourney";
+import AboutMe from "../components/AboutMe/AboutMe";
+import Skills from "../components/Skills/Skills";
+import MyCircle from "../components/MyCircle/MyCircle";
 
 const Root = () => {
-    return (
-        <div className='' style={{ background: 'linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%)' }}>
-          
+  return (
+    <div
+      className="min-h-screen w-full bg-no-repeat bg-fixed bg-cover"
+      style={{
+        background:
+          "radial-gradient(125% 125% at 50% 100%, #ffffff 40%, #3b82f6 100%)",
+      }}
+    >
+      <header className="sticky md:top-1 z-50">
+        <NavBar />
+      </header>
 
-            <header className='sticky md:top-1 z-50 '>
-              <NavBar></NavBar>
-            </header>
-             <Element name="hero" className='max-w-7xl mx-auto'>
-                <Hero></Hero>
-            </Element>
-             <Element>
-               <MyJourney></MyJourney>
-             </Element>
+      <main className="relative z-10 max-w-[1400px] mx-auto">
+        <section id="hero">
+          <Hero></Hero>
+        </section>
 
-             <Element name="about" className='max-w-7xl mx-auto'>
-               <AboutMe></AboutMe>
-             </Element>
+        <MyJourney></MyJourney>
 
-             <Element name="skills" className=''>
-              <Skills></Skills>
-             </Element>
+        <section id="about">
+          <AboutMe></AboutMe>
+        </section>
 
-            
-        </div>
-    );
+        <section id="skills">
+          <Skills></Skills>
+        </section>
+
+
+        <section id="circle">
+          <MyCircle></MyCircle>
+        </section>
+
+        <section id="projects" className="py-20">
+          {/* You can replace this with your actual Projects component */}
+          <div className="text-center text-2xl font-semibold text-white">
+            Projects Coming Soon...
+          </div>
+        </section>
+      </main>
+    </div>
+  );
 };
 
 export default Root;

@@ -51,6 +51,9 @@ const NavBar = () => {
         <Link to="skills" smooth duration={600} className="cursor-pointer hover:underline">
           Skills
         </Link>
+        <Link to="circle" smooth duration={600} className="cursor-pointer hover:underline">
+          Mycircle
+        </Link>
         <Link to="projects" smooth duration={600} className="cursor-pointer hover:underline">
           Projects
         </Link>
@@ -58,8 +61,8 @@ const NavBar = () => {
 
       {/* Right - CTA button */}
       <div>
-        <button  className="text-white bg-black/40 font-semibold py-1.5 px-2 rounded-xl">
-          Contact ↗
+        <button  className="text-white bg-black/40 font-medium py-2 px-4 rounded-xl">
+          Contact 
         </button>
       </div>
     </nav>
