@@ -5,11 +5,11 @@ import { FaBars } from 'react-icons/fa';
 
 const NavBar = () => {
   return (
-    <nav className="max-w-5xl mx-auto bg-black/30 backdrop-blur-md text-white md:rounded-2xl px-6 py-3 flex justify-between items-center text-sm">
+    <nav className="max-w-5xl mx-auto bg-black/30 backdrop-blur-md md:rounded-2xl px-6 py-3 flex justify-between items-center text-sm">
       {/* Left - Brand or Menu */}
       <div className="md:hidden">
         <div className="dropdown">
-          <label tabIndex={0} className="btn btn-ghost btn-circle text-white">
+          <label tabIndex={0} className="btn btn-ghost btn-circle">
             <FaBars className="text-xl" />
           </label>
           <ul
@@ -36,6 +36,11 @@ const NavBar = () => {
                 Projects
               </Link>
             </li>
+            <li>
+              <Link to="contact" smooth duration={600} className="cursor-pointer">
+                Contact
+              </Link>
+            </li>
           </ul>
         </div>
       </div>
@@ -59,10 +64,9 @@ const NavBar = () => {
         </Link>
       </div>
 
-      {/* Right - CTA button */}
       <div>
         <button  className="text-white bg-black/40 font-medium py-2 px-4 rounded-xl">
-          Contact 
+          Resume
         </button>
       </div>
     </nav>

@@ -5,7 +5,7 @@ const MyJourney = () => {
     <section className="w-full flex items-center justify-center my-3 md:my-10">
       <div
         
-        className="text-center max-w-5xl"
+        className="text-center max-w-6xl"
       >
         <p className="py-7 mx-2 text-justify leading-relaxed">
           My journey as a developer began with curiosity and a passion for learning.

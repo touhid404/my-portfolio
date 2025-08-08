@@ -1,22 +1,41 @@
 "use client";
 
 import React from "react";
+import TagRotator from "./TagRotator";
 
 const DotIcon = () => (
-  <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <svg
+    width="8"
+    height="8"
+    viewBox="0 0 8 8"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
     <circle cx="4" cy="4" r="4" fill="currentColor" />
   </svg>
 );
 
 const coderData = {
-  name: 'Touhidul Islam',
-  role: 'Frontend Developer',
-  seniority: 'Mid-Level',
-  location: 'Bangladesh',
+  name: "Touhidul Islam",
+  role: "Fullstack Developer",
+  seniority: "junior-Level",
+  location: "Bangladesh",
   skills: [
-    'React', 'Next.js', 'JavaScript', 'TypeScript', 'TailwindCSS', 'CSS', 'Figma',
-    'GitHub', 'HTML', 'Astro', 'Node.js', 'Express', 'MongoDB', 'Firebase', 'Git'
-  ]
+    "React",
+    "Next.js",
+    "JavaScript",
+    "TypeScript",
+    "TailwindCSS",
+    "CSS",
+    "Figma",
+    "GitHub",
+    "HTML",
+    "Node.js",
+    "Express",
+    "MongoDB",
+    "Firebase",
+    "Git",
+  ],
 };
 
 const CoderProfileCard = () => {
@@ -27,7 +46,7 @@ const CoderProfileCard = () => {
         <div className="h-[2px] w-full bg-gradient-to-r from-violet-600 to-transparent"></div>
       </div>
 
-      <div className="px-4 lg:px-8 py-5 flex justify-between items-center bg-zinc-200">
+      <div className="px-4 lg:px-8 py-5 flex justify-between items-center rounded-xl bg-zinc-200">
         <div className="flex flex-row space-x-2">
           <div className="h-3 w-3 rounded-full bg-red-500"></div>
           <div className="h-3 w-3 rounded-full bg-orange-400"></div>
@@ -43,15 +62,18 @@ const CoderProfileCard = () => {
         <div className="relative flex">
           <div className="hidden md:flex flex-col items-end pr-4 text-zinc-600 font-mono text-xs">
             {Array.from({ length: 12 }, (_, i) => (
-              <div key={i} className="leading-relaxed select-none opacity-70">{i + 1}</div>
+              <div key={i} className="leading-relaxed select-none opacity-70">
+                {i + 1}
+              </div>
             ))}
           </div>
 
           <code className="font-mono text-xs md:text-sm lg:text-base w-full">
-            <div><span className="mr-2 text-pink-500">const</span>
+            <div>
+              <span className="mr-2 text-pink-500">const</span>
               <span className="mr-2 text-violet-500">coder</span>
               <span className="mr-2 text-pink-500">=</span>
-              <span className="text-zinc-600">{'{'}</span>
+              <span className="text-zinc-600">{"{"}</span>
             </div>
 
             <div className="pl-6">
@@ -84,21 +106,25 @@ const CoderProfileCard = () => {
 
             <div className="pl-6">
               <span className="text-zinc-800">skills:</span>
-              <span className="text-zinc-600">{'['}</span>
+              <span className="text-zinc-600">{"["}</span>
               <div className="pl-6 flex flex-wrap">
                 {coderData.skills.map((skill, index) => (
                   <span key={skill} className="mr-1">
                     <span className="text-zinc-600">&#39;</span>
                     <span className="text-cyan-600">{skill}</span>
                     <span className="text-zinc-600">&#39;</span>
-                    {index < coderData.skills.length - 1 && <span className="text-zinc-600">, </span>}
+                    {index < coderData.skills.length - 1 && (
+                      <span className="text-zinc-600">, </span>
+                    )}
                   </span>
                 ))}
               </div>
               <span className="text-zinc-600">],</span>
             </div>
 
-            <div><span className="text-zinc-600">{'};'}</span></div>
+            <div>
+              <span className="text-zinc-600">{"};"}</span>
+            </div>
           </code>
         </div>
       </div>
@@ -115,15 +141,12 @@ const CoderProfileCard = () => {
 const Hero = () => {
   return (
     <div className="min-h-screen w-full relative flex items-center justify-center font-sans p-4 sm:p-6 lg:p-8">
-      <div
-        className="absolute inset-0 z-0"
-       
-      />
+      <div className="absolute inset-0 z-0" />
 
       <div className="container mx-auto max-w-7xl relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 xl:gap-16 items-center">
           <div className="flex flex-col gap-4 sm:gap-6 items-start text-left order-2 lg:order-1 animate-fade-in-up">
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-gray-900/80 border-gray-700 rounded-full text-xs sm:text-sm text-white backdrop-blur-sm hover:bg-gray-800 transition-all duration-300">
+            <div className="inline-flex items-center gap-2 px-3 py-2 bg-gray-900/80 border-gray-700 rounded-full text-xs sm:text-sm  backdrop-blur-sm hover:bg-gray-800 transition-all duration-300">
               <DotIcon />
               Welcome to my universe
             </div>
@@ -131,33 +154,20 @@ const Hero = () => {
             <div className="relative">
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold leading-tight text-gray-900">
                 Hello <br />
-                I&apos;m{' '}
+                I&apos;m{" "}
                 <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                   Touhidul Islam
                 </span>
               </h1>
             </div>
 
-            <div className="flex flex-wrap gap-2 sm:gap-3 my-2 sm:my-4">
-              {['Learning MARN Stack', 'Clean Code', 'Innovation'].map((tag) => (
-                <span key={tag} className="px-3 sm:px-4 py-1 sm:py-2 bg-gray-900/80 border-gray-700 rounded-full text-white text-sm sm:text-base backdrop-blur-sm hover:bg-gray-800 transition-all duration-300 cursor-default">
-                  {tag}
-                </span>
-              ))}
-            </div>
+           
+            <TagRotator></TagRotator>
 
-            <p className="text-gray-600 text-base sm:text-lg lg:text-xl max-w-lg leading-relaxed">
-              JavaScript lover 🖋️ | Olovals creator ⚡ | Crafting frameworks and coding the future ✨
-            </p>
 
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-4 sm:mt-6 w-full sm:w-auto">
-              <button className="px-6 py-3 bg-blue-600 text-white hover:bg-blue-700 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 active:scale-95">
-                Learn More
-              </button>
-              <button className="px-6 py-3 bg-gray-500 border border-gray-300  rounded-xl font-semibold transition-all duration-300 hover:scale-105 active:scale-95">
-                Get Resume
-              </button>
-            </div>
+        
+
+            
           </div>
 
           <div className="order-1 lg:order-2 animate-fade-in-up">
@@ -193,8 +203,8 @@ const styles = `
   }
 `;
 
-if (typeof document !== 'undefined') {
-  const styleSheet = document.createElement('style');
+if (typeof document !== "undefined") {
+  const styleSheet = document.createElement("style");
   styleSheet.textContent = styles;
   document.head.appendChild(styleSheet);
 }

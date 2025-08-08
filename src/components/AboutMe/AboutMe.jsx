@@ -1,18 +1,17 @@
-import img1 from '../../assets/myP.jpg';
+import { Link } from "react-scroll";
+import img1 from "../../assets/myP.jpg";
 
 const AboutMe = () => {
   return (
-    <section className="md:py-20 px-4 text-black">
+    <section className="md:py-20 px-4 ">
       <div className="mx-auto">
         {/* Heading */}
-        <h1 className="text-center text-2xl font-semibold my-10">
-          [ About Myself ]
-        </h1>
 
-        {/* Sub heading */}
-        <p className="text-justify md:text-center text-xl max-w-5xl mx-auto mb-12">
-          Hi, I’m <span className="font-bold">Touhidul Islam</span> — someone who believes that great design is part creativity, part empathy, and part coffee-fueled hustle.
-        </p>
+        <h1 className="text-center text-3xl font-bold mb-14">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
+            [ About Me ]
+          </span>
+        </h1>
 
         {/* Content */}
         <div className="grid md:grid-cols-3 gap-10 items-center">
@@ -23,12 +22,23 @@ const AboutMe = () => {
                 Transforming Ideas into Digital Experiences
               </h3>
               <p className="text-justify">
-                You bring the vision, I bring the process – together we build a website that works.
+                You bring the vision, I bring the process – together we build a
+                website that works.
               </p>
             </div>
-            <button className=" px-6 py-2 bg-blue-600 rounded-xl hover:bg-gray-800 text-white">
-              Start  Project
+            <button className=" px-6 py-2 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl hover:bg-gray-800 text-white">
+               <li>
+              <Link
+                to="projects"
+                smooth
+                duration={600}
+                className="cursor-pointer"
+              >
+                Start Projects
+              </Link>
+            </li>
             </button>
+           
           </div>
 
           {/* Image Block */}
@@ -43,13 +53,18 @@ const AboutMe = () => {
           {/* Right Block */}
           <div className="space-y-6 text-justify">
             <p>
-              I’m Touhidul Islam – a 3rd-year CSE student at UIU with a passion for frontend development and creating user-friendly digital experiences.
+              I’m Touhidul Islam – a 3rd-year CSE student at UIU with a passion
+              for frontend development and creating user-friendly digital
+              experiences.
             </p>
             <p>
-              I enjoy turning simple ideas into clean, scalable interfaces. Whether it's collaborating on large projects or building solo, I’m driven by creativity and curiosity.
+              I enjoy turning simple ideas into clean, scalable interfaces.
+              Whether it's collaborating on large projects or building solo, I’m
+              driven by creativity and curiosity.
             </p>
             <p>
-              Outside of coding, I often recharge by exploring design trends, watching tech content, or playing games.
+              Outside of coding, I often recharge by exploring design trends,
+              watching tech content, or playing games.
             </p>
             <a href="#more" className="font-semibold hover:underline">
               Read More →
