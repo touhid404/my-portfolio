@@ -1,22 +1,34 @@
 import { Link } from "react-scroll";
 import img1 from "../../assets/myP.jpg";
+import { motion } from "framer-motion";
 
 const AboutMe = () => {
   return (
-    <section className="md:py-20 px-4 ">
+    <section className="md:py-20 px-4 overflow-hidden md:overflow-visible">
       <div className="mx-auto">
         {/* Heading */}
-
-        <h1 className="text-center text-3xl font-bold mb-14">
+        <motion.h1
+          className="text-center text-3xl font-bold mb-14"
+          initial={{ opacity: 0, y: -30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: false }}
+        >
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
             [ About Me ]
           </span>
-        </h1>
+        </motion.h1>
 
         {/* Content */}
         <div className="grid md:grid-cols-3 gap-10 items-center">
           {/* Left Block */}
-          <div className="space-y-6 flex flex-col items-center md:items-start">
+          <motion.div
+            className="space-y-6 flex flex-col items-center md:items-start"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7 }}
+            viewport={{ once: false }}
+          >
             <div>
               <h3 className="text-lg font-semibold mb-2">
                 Transforming Ideas into Digital Experiences
@@ -26,32 +38,43 @@ const AboutMe = () => {
                 website that works.
               </p>
             </div>
-            <button className=" px-6 py-2 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl hover:bg-gray-800 text-white">
-               <li>
-              <Link
-                to="projects"
-                smooth
-                duration={600}
-                className="cursor-pointer"
-              >
-                Start Projects
-              </Link>
-            </li>
+            <button className="px-6 py-2 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl hover:bg-gray-800 text-white">
+              <li>
+                <Link
+                  to="projects"
+                  smooth
+                  duration={600}
+                  className="cursor-pointer"
+                >
+                  Start Projects
+                </Link>
+              </li>
             </button>
-           
-          </div>
+          </motion.div>
 
           {/* Image Block */}
-          <div className="flex justify-center">
+          <motion.div
+            className="flex justify-center"
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: false }}
+          >
             <img
               src={img1}
               alt="Touhidul Islam"
               className="w-[300px] h-[380px] object-cover rounded-2xl rounded-t-[100px] shadow-xl"
             />
-          </div>
+          </motion.div>
 
           {/* Right Block */}
-          <div className="space-y-6 text-justify">
+          <motion.div
+            className="space-y-6 text-justify"
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7 }}
+            viewport={{ once: false }}
+          >
             <p>
               I’m Touhidul Islam – a 3rd-year CSE student at UIU with a passion
               for frontend development and creating user-friendly digital
@@ -69,7 +92,7 @@ const AboutMe = () => {
             <a href="#more" className="font-semibold hover:underline">
               Read More →
             </a>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

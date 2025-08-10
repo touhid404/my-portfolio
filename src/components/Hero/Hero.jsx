@@ -2,6 +2,7 @@
 
 import React from "react";
 import TagRotator from "./TagRotator";
+import SocialLinks from "./SocialLinks";
 
 const DotIcon = () => (
   <svg
@@ -162,7 +163,8 @@ const Hero = () => {
             </div>
 
            
-            <TagRotator></TagRotator>
+            {/* <TagRotator></TagRotator> */}
+            <SocialLinks/>
 
 
         

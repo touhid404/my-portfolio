@@ -1,11 +1,16 @@
 import React from 'react';
 import { Link } from 'react-scroll';
 import { FaBars } from 'react-icons/fa';
-
+import { motion } from 'framer-motion';
 
 const NavBar = () => {
   return (
-    <nav className="max-w-5xl mx-auto bg-black/30 backdrop-blur-md md:rounded-2xl px-6 py-3 flex justify-between items-center text-sm">
+    <motion.nav
+      initial={{ width: '30%' }}
+      animate={{ width: '100%' }}
+      transition={{ duration: 3, ease: 'easeInOut' }}
+      className="max-w-5xl mx-auto bg-black/30 backdrop-blur-md md:rounded-3xl px-6 py-3 flex justify-between items-center text-sm overflow-hidden"
+    >
       {/* Left - Brand or Menu */}
       <div className="md:hidden">
         <div className="dropdown">
@@ -65,11 +70,11 @@ const NavBar = () => {
       </div>
 
       <div>
-        <button  className="text-white bg-black/40 font-medium py-2 px-4 rounded-xl">
+        <button className="text-white bg-black/40 font-medium py-2 px-4 rounded-xl">
           Resume
         </button>
       </div>
-    </nav>
+    </motion.nav>
   );
 };
 
